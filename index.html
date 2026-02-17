@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Roza Aceska — Associate Professor of Mathematical Sciences</title>
+  <meta name="description" content="Roza Aceska — Associate Professor of Mathematical Sciences at Ball State University. Research and teaching information, publications, and contact." />
+  <link rel="icon" href="/favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">Roza Aceska</h1>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h2>Roza Aceska</h2>
+        <p class="lead">Associate Professor of Mathematical Sciences at Ball State University</p>
+        <p class="lead">PhD, University of Vienna (advisor: Hans G. Feichtinger)</p>
+      </div>
+    </section>
+
+    <section id="about" class="container about">
+      <h3>About</h3>
+      <p>I am an Associate Professor in the Department of Mathematical Sciences at Ball State University in Muncie, Indiana. My research and teaching focus on applied and theoretical mathematics. More information on my faculty profile is available on the Ball State website: <a href="https://www.bsu.edu/academics/collegesanddepartments/math/about/facultyandstaff/faculty/aceskaroza" target="_blank" rel="noopener">Ball State — Roza Aceska</a>.</p>
+    </section>
+
+    <section id="teaching" class="container teaching">
+      <h3>Teaching — Spring 2026</h3>
+      <ul>
+        <li>Quantitative Reasoning</li>
+        <li>Mathematical Modelling</li>
+        <li>Graph Theory 2</li>
+      </ul>
+    </section>
+
+    <section id="research" class="container research">
+      <h3>Research</h3>
+      <p><strong>Research interests</strong></p>
+      <ul>
+        <li>Frame Theory and Applications</li>
+        <li>Sampling Theory and Applications</li>
+        <li>Time–Frequency Analysis</li>
+      </ul>
+
+      <p>Profiles and publications are available via:
+        <a href="#" id="arxiv-link">ArXiv</a>,
+        <a href="https://scholar.google.com/citations?hl=en&user=utMOte0AAAAJ&view_op=list_works&sortby=pubdate" id="gscholar-link" target="_blank" rel="noopener">Google Scholar</a>,
+        and <a href="#" id="ams-link">AMS MRLookup</a>.
+        (Replace the ArXiv and AMS links with direct URLs if you want.)
+      </p>
+    </section>
+
+    <section id="publications" class="container publications">
+      <h3>Selected Publications</h3>
+      <ul>
+        <li>R. Aceska, J.L. Bouchot, S. Li. "Local sparsity and recovery of fusion frame structured signals." Signal Processing 174, 107615 (2020).</li>
+        <li>R. Aceska, Y.H. Kim. "Evolutionary Systems Representations Based on Later Time Samples and Applications to PDEs." East Asian Journal on Applied Mathematics 10 (4), 838–850 (2020).</li>
+      </ul>
+    </section>
+
+    <section id="employment" class="container employment">
+      <h3>Employment</h3>
+      <p><strong>2021–present</strong> — Associate Professor, Department of Mathematical Sciences, Ball State University, Muncie, Indiana</p>
+    </section>
+
+    <section id="contact" class="container contact">
+      <h3>Contact</h3>
+      <p>If you'd like to get in touch, please use the contact form below. No email address is listed on this page.</p>
+
+      <!-- Example static form using Formspree (replace action with your Formspree endpoint) -->
+      <form action="https://formspree.io/f/your-id" method="POST" class="contact-form" aria-label="Contact form">
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" required />
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="_replyto" required />
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="6" required></textarea>
+        </label>
+        <button type="submit" class="btn">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Roza Aceska — <a href="https://github.com/raceska" target="_blank" rel="noopener">GitHub</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,287 @@
+#!/usr/bin/env bash
+set -e
+
+OUTDIR="site_for_github"
+ZIPNAME="site_files.zip"
+
+rm -rf "$OUTDIR" "$ZIPNAME"
+mkdir -p "$OUTDIR"
+
+cat > "$OUTDIR/index.html" <<'HTML'
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Roza Aceska — Associate Professor of Mathematical Sciences</title>
+  <meta name="description" content="Roza Aceska — Associate Professor of Mathematical Sciences at Ball State University. Research and teaching information, publications, and contact." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">Roza Aceska</h1>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h2>Roza Aceska</h2>
+        <p class="lead">Associate Professor of Mathematical Sciences at Ball State University</p>
+        <p class="lead">PhD, University of Vienna (advisor: Hans G. Feichtinger)</p>
+      </div>
+    </section>
+
+    <section id="about" class="container about">
+      <h3>About</h3>
+      <p>I am an Associate Professor in the Department of Mathematical Sciences at Ball State University in Muncie, Indiana. My research and teaching focus on applied and theoretical mathematics. More information on my faculty profile is available on the Ball State website: <a href="https://www.bsu.edu/academics/collegesanddepartments/math/about/facultyandstaff/faculty/aceskaroza" target="_blank" rel="noopener">Ball State — Roza Aceska</a>.</p>
+    </section>
+
+    <section id="teaching" class="container teaching">
+      <h3>Teaching — Spring 2026</h3>
+      <ul>
+        <li>Quantitative Reasoning</li>
+        <li>Mathematical Modelling</li>
+        <li>Graph Theory 2</li>
+      </ul>
+    </section>
+
+    <section id="research" class="container research">
+      <h3>Research</h3>
+      <p><strong>Research interests</strong></p>
+      <ul>
+        <li>Frame Theory and Applications</li>
+        <li>Sampling Theory and Applications</li>
+        <li>Time–Frequency Analysis</li>
+      </ul>
+
+      <p>Profiles and publications are available via:
+        <a href="#" id="arxiv-link">ArXiv</a>,
+        <a href="https://scholar.google.com/citations?hl=en&user=utMOte0AAAAJ&view_op=list_works&sortby=pubdate" id="gscholar-link" target="_blank" rel="noopener">Google Scholar</a>,
+        and <a href="#" id="ams-link">AMS MRLookup</a>.
+        (Replace the ArXiv and AMS links with direct URLs if you want.)
+      </p>
+    </section>
+
+    <section id="publications" class="container publications">
+      <h3>Selected Publications</h3>
+      <ul>
+        <li>R. Aceska, J.L. Bouchot, S. Li. "Local sparsity and recovery of fusion frame structured signals." Signal Processing 174, 107615 (2020).</li>
+        <li>R. Aceska, Y.H. Kim. "Evolutionary Systems Representations Based on Later Time Samples and Applications to PDEs." East Asian Journal on Applied Mathematics 10 (4), 838–850 (2020).</li>
+      </ul>
+    </section>
+
+    <section id="employment" class="container employment">
+      <h3>Employment</h3>
+      <p><strong>2021–present</strong> — Associate Professor, Department of Mathematical Sciences, Ball State University, Muncie, Indiana</p>
+    </section>
+
+    <section id="contact" class="container contact">
+      <h3>Contact</h3>
+      <p>If you'd like to get in touch, please use the contact form below. No email address is listed on this page.</p>
+
+      <!-- Example static form using Formspree (replace action with your Formspree endpoint) -->
+      <form action="https://formspree.io/f/your-id" method="POST" class="contact-form" aria-label="Contact form">
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" required />
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="_replyto" required />
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="6" required></textarea>
+        </label>
+        <button type="submit" class="btn">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Roza Aceska — <a href="https://github.com/raceska" target="_blank" rel="noopener">GitHub</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+HTML
+
+cat > "$OUTDIR/styles.css" <<'CSS'
+/* Simple modern styles for a professional portfolio */
+:root{
+  --bg: #0f1724;
+  --card: #0b1220;
+  --muted: #aab2bf;
+  --accent: #7c5cff;
+  --glass: rgba(255,255,255,0.03);
+  --radius: 10px;
+  --container: 1000px;
+  --font: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:var(--font);
+  background:linear-gradient(180deg,#071028 0%, #0f1724 100%);
+  color:#e6eef8;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+.container{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:2rem;
+}
+
+.site-header{
+  background:transparent;
+  position:sticky;
+  top:0;
+  z-index:20;
+  backdrop-filter: blur(6px);
+}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem}
+.logo{margin:0;font-size:1.2rem;letter-spacing:0.4px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:1.2rem;font-weight:600}
+.nav a:hover{color:#fff}
+
+.hero{
+  padding:6rem 0;
+  background:linear-gradient(90deg, rgba(124,92,255,0.12), transparent 40%);
+}
+.hero .lead{color:var(--muted);max-width:58ch}
+.btn{
+  display:inline-block;
+  background:var(--accent);
+  color:#fff;
+  padding:0.65rem 1rem;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+  margin-right:0.5rem;
+}
+.btn-outline{
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.about, .work, .contact, .research, .publications, .teaching{padding:3rem 0}
+
+.skills{list-style:none;padding:0;display:flex;gap:0.5rem;margin-top:1rem}
+.skills li{background:var(--glass);color:var(--muted);padding:0.4rem 0.7rem;border-radius:999px;font-size:0.9rem}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:1rem;border-radius:var(--radius);border:1px solid rgba(255,255,255,0.03)}
+
+.small-link{color:var(--accent);text-decoration:none;font-weight:600}
+
+.contact-form{max-width:620px;margin-top:1rem;display:flex;flex-direction:column;gap:0.75rem}
+.contact-form label{display:flex;flex-direction:column;color:var(--muted);font-size:0.9rem}
+.contact-form input, .contact-form textarea{
+  margin-top:0.4rem;padding:0.6rem;border-radius:8px;border:1px solid rgba(255,255,255,0.04);
+  background:transparent;color:inherit;font-size:1rem
+}
+.site-footer{padding:2rem 0;border-top:1px solid rgba(255,255,255,0.02);color:var(--muted);font-size:0.95rem;text-align:center}
+@media (max-width:640px){
+  .site-header .container{padding:1rem}
+  .container{padding:1rem}
+  .hero{padding:3.5rem 0}
+}
+CSS
+
+cat > "$OUTDIR/README.md" <<'MD'
+# Roza Aceska — Personal Website
+
+This repository contains a professional homepage for Roza Aceska built for GitHub Pages.
+
+How to publish
+1. Push main branch to GitHub (see commands below) or upload files via the web UI.
+2. Go to GitHub → Settings → Pages → Source: `main` / root → Save.
+3. Visit https://raceska.github.io
+
+Local development
+- Open `index.html` in your browser.
+- Edit content, project links, and the contact form action (e.g., replace the Formspree action with your Formspree endpoint).
+
+Contact form
+- The form currently uses a placeholder Formspree action: `https://formspree.io/f/your-id`.
+- To receive submissions, sign up at https://formspree.io (or another form provider) and replace the `action` attribute on the `<form>` element with your form endpoint.
+
+Notes & recommended next steps
+- Replace the Formspree placeholder with a real endpoint (or use Netlify Forms, FormKeep, or a server endpoint if you prefer).
+- Add a real favicon at `/favicon.ico` or `/favicon.svg` and update the <link> tag in `index.html` if needed.
+- Add an OG image for social sharing.
+- Add ArXiv and AMS MRLookup links in the Research section if you want direct links.
+MD
+
+cat > "$OUTDIR/LICENSE" <<'LIC'
+MIT License
+
+Copyright (c) 2026 Roza Aceska
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+LIC
+
+cat > "$OUTDIR/LICENSE-CONTENT" <<'LC'
+Site content license (text, images, publications list)
+
+The textual content and images on this site (for example: biography, research interests,
+selected publications and related page content) are licensed under the Creative Commons
+Attribution 4.0 International (CC BY 4.0) license.
+
+You are free to Share and Adapt the content for any purpose, even commercially,
+as long as you provide appropriate credit to Roza Aceska and a link to the license.
+
+Full license: https://creativecommons.org/licenses/by/4.0/
+LC
+
+cat > "$OUTDIR/favicon.svg" <<'SVG'
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="10" fill="#7c5cff"/>
+  <text x="50%" y="54%" font-family="Arial, Helvetica, sans-serif" font-size="34" fill="#fff" text-anchor="middle" alignment-baseline="middle">R</text>
+</svg>
+SVG
+
+# create zip
+(
+  cd "$OUTDIR"
+  zip -r "../$ZIPNAME" ./*
+)
+
+echo "Created $ZIPNAME containing files from $OUTDIR"

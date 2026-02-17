@@ -1,0 +1,98 @@
+Nice — index.html is in the repo. Now we’ll add the stylesheet.
+
+Step 2 — create styles.css in the repo (use the web UI)
+1. Open https://github.com/raceska/raceska.github.io
+2. Click Add file → Create new file
+3. For the filename enter: styles.css
+4. Paste the entire contents below into the editor.
+5. Commit directly to main with message: "Add styles.css"
+6. Reply “Done step 2” when finished and I’ll give Step 3 (add README, licenses, and favicon).
+
+Paste this exactly into the new file:
+
+```css name=styles.css
+/* Simple modern styles for a professional portfolio */
+:root{
+  --bg: #0f1724;
+  --card: #0b1220;
+  --muted: #aab2bf;
+  --accent: #7c5cff;
+  --glass: rgba(255,255,255,0.03);
+  --radius: 10px;
+  --container: 1000px;
+  --font: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:var(--font);
+  background:linear-gradient(180deg,#071028 0%, #0f1724 100%);
+  color:#e6eef8;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+.container{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:2rem;
+}
+
+.site-header{
+  background:transparent;
+  position:sticky;
+  top:0;
+  z-index:20;
+  backdrop-filter: blur(6px);
+}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem}
+.logo{margin:0;font-size:1.2rem;letter-spacing:0.4px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:1.2rem;font-weight:600}
+.nav a:hover{color:#fff}
+
+.hero{
+  padding:6rem 0;
+  background:linear-gradient(90deg, rgba(124,92,255,0.12), transparent 40%);
+}
+.hero .lead{color:var(--muted);max-width:58ch}
+.btn{
+  display:inline-block;
+  background:var(--accent);
+  color:#fff;
+  padding:0.65rem 1rem;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+  margin-right:0.5rem;
+}
+.btn-outline{
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.about, .work, .contact, .research, .publications, .teaching{padding:3rem 0}
+
+.skills{list-style:none;padding:0;display:flex;gap:0.5rem;margin-top:1rem}
+.skills li{background:var(--glass);color:var(--muted);padding:0.4rem 0.7rem;border-radius:999px;font-size:0.9rem}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:1rem;border-radius:var(--radius);border:1px solid rgba(255,255,255,0.03)}
+
+.small-link{color:var(--accent);text-decoration:none;font-weight:600}
+
+.contact-form{max-width:620px;margin-top:1rem;display:flex;flex-direction:column;gap:0.75rem}
+.contact-form label{display:flex;flex-direction:column;color:var(--muted);font-size:0.9rem}
+.contact-form input, .contact-form textarea{
+  margin-top:0.4rem;padding:0.6rem;border-radius:8px;border:1px solid rgba(255,255,255,0.04);
+  background:transparent;color:inherit;font-size:1rem
+}
+.site-footer{padding:2rem 0;border-top:1px solid rgba(255,255,255,0.02);color:var(--muted);font-size:0.95rem;text-align:center}
+@media (max-width:640px){
+  .site-header .container{padding:1rem}
+  .container{padding:1rem}
+  .hero{padding:3.5rem 0}
+}
+```

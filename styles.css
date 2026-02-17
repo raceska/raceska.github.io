@@ -1,16 +1,3 @@
-Nice — index.html is in the repo. Now we’ll add the stylesheet.
-
-Step 2 — create styles.css in the repo (use the web UI)
-1. Open https://github.com/raceska/raceska.github.io
-2. Click Add file → Create new file
-3. For the filename enter: styles.css
-4. Paste the entire contents below into the editor.
-5. Commit directly to main with message: "Add styles.css"
-6. Reply “Done step 2” when finished and I’ll give Step 3 (add README, licenses, and favicon).
-
-Paste this exactly into the new file:
-
-```css name=styles.css
 /* Simple modern styles for a professional portfolio */
 :root{
   --bg: #0f1724;
@@ -95,4 +82,3 @@ body{
   .container{padding:1rem}
   .hero{padding:3.5rem 0}
 }
-```

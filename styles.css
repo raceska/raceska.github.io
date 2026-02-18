@@ -1,10 +1,10 @@
 /* Simple modern styles for a professional portfolio */
 :root{
-  --bg: #191970;
-  --card: #0b1220;
+  --bg: #191970;             /* Midnight Blue */
+  --card: #1c1c84;           /* Slightly lighter blue for cards */
   --muted: #aab2bf;
   --accent: #7c5cff;
-  --glass: rgba(255,255,255,0.03);
+  --glass: rgba(255,255,255,0.05);
   --radius: 10px;
   --container: 1000px;
   --font: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
@@ -12,10 +12,12 @@
 
 *{box-sizing:border-box}
 html,body{height:100%}
+
 body{
   margin:0;
   font-family:var(--font);
-  background:linear-gradient(180deg,#071028 0%, #191970 100%);
+  /* Replaced the near-black #071028 with Midnight Blue */
+  background: #191970; 
   color:#e6eef8;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
@@ -29,12 +31,13 @@ body{
 }
 
 .site-header{
-  background:transparent;
+  background: rgba(25, 25, 112, 0.8); /* Midnight blue with transparency */
   position:sticky;
   top:0;
   z-index:20;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(10px);
 }
+
 .site-header .container{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem}
 .logo{margin:0;font-size:1.2rem;letter-spacing:0.4px}
 .nav a{color:var(--muted);text-decoration:none;margin-left:1.2rem;font-weight:600}
@@ -42,8 +45,10 @@ body{
 
 .hero{
   padding:6rem 0;
-  background:linear-gradient(90deg, rgba(124,92,255,0.12), transparent 40%);
+  /* subtle glow effect over the midnight blue */
+  background: linear-gradient(90deg, rgba(124,92,255,0.15), transparent 60%);
 }
+
 .hero .lead{color:var(--muted);max-width:58ch}
 .btn{
   display:inline-block;
@@ -57,7 +62,7 @@ body{
 }
 .btn-outline{
   background:transparent;
-  border:1px solid rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.15);
 }
 
 .about, .work, .contact, .research, .publications, .teaching{padding:3rem 0}
@@ -66,17 +71,23 @@ body{
 .skills li{background:var(--glass);color:var(--muted);padding:0.4rem 0.7rem;border-radius:999px;font-size:0.9rem}
 
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
-.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:1rem;border-radius:var(--radius);border:1px solid rgba(255,255,255,0.03)}
+.card{
+  background: rgba(255, 255, 255, 0.03); 
+  padding:1rem;
+  border-radius:var(--radius);
+  border: 1px solid rgba(255,255,255,0.08);
+}
 
 .small-link{color:var(--accent);text-decoration:none;font-weight:600}
 
 .contact-form{max-width:620px;margin-top:1rem;display:flex;flex-direction:column;gap:0.75rem}
 .contact-form label{display:flex;flex-direction:column;color:var(--muted);font-size:0.9rem}
 .contact-form input, .contact-form textarea{
-  margin-top:0.4rem;padding:0.6rem;border-radius:8px;border:1px solid rgba(255,255,255,0.04);
-  background:transparent;color:inherit;font-size:1rem
+  margin-top:0.4rem;padding:0.6rem;border-radius:8px;border:1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.02);color:inherit;font-size:1rem
 }
-.site-footer{padding:2rem 0;border-top:1px solid rgba(255,255,255,0.02);color:var(--muted);font-size:0.95rem;text-align:center}
+.site-footer{padding:2rem 0;border-top:1px solid rgba(255,255,255,0.05);color:var(--muted);font-size:0.95rem;text-align:center}
+
 @media (max-width:640px){
   .site-header .container{padding:1rem}
   .container{padding:1rem}
